@@ -1,0 +1,9 @@
+1. dapetin id kasus dari slug
+2. query di bawah
+3. normalisasi
+    cost = minimal cost / nilai masing masing costnya
+    benefit = nilai masing masing cost / max cost
+4. 
+
+SELECT kasus.nama_kasus, kriteria.nama_kriteria, kriteria.bobot, MIN(nilai) as nilai_minimal, MAX(nilai) as nilai_maximal from kasus INNER JOIN kriteria ON kriteria.id_kasus = kasus.id_kasus INNER JOIN alternatif ON alternatif.id_kasus = kasus.id_kasus INNER JOIN pengujian ON pengujian.id_kriteria = kriteria.id_kriteria AND pengujian.id_alternatif = alternatif.id_alternatif WHERE kasus.id_kasus = 5 GROUP BY pengujian.id_kriteria ORDER BY kriteria.nama_kriteria
+SELECT alternatif.id_alternatif, alternatif.nama_alternatif, kriteria.nama_kriteria, kriteria.bobot, pengujian.nilai FROM `alternatif` INNER JOIN pengujian ON alternatif.id_alternatif=pengujian.id_alternatif INNER JOIN kriteria ON kriteria.id_kriteria = pengujian.id_kriteria INNER JOIN kasus ON kasus.id_kasus = alternatif.id_kasus WHERE kasus.id_kasus = 5 ORDER BY alternatif.nama_alternatif ASC, kriteria.nama_kriteria ASC

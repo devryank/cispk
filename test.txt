@@ -1,0 +1,35 @@
+master:
+1. kasus 
+    input nama kasus
+    kriteria
+    nilai
+
+2. user 
+    full name
+    username
+    password
+
+
+(tbl kasus)
+id_kasus
+nama_kasus
+
+(tbl kriteria) menentukan kriteria apa saja yang menjadi variabel dalam dalam kasus tersebut
+id_kriteria
+id_kasus
+nama_kriteria
+bobot
+
+(tbl alternatif) menentukan pilihan apa saja yang terdapat dalam kasus tersebut
+id_alternatif
+id_kasus
+nama_alternatif
+
+(tbl pengujian) alternatif yang sudah dibuat diinputkan nilainya berdasarkan kriteria
+id_bahan_uji
+id_kriteria
+id_alternatif
+tipe_kriteria
+nilai
+
+$2y$10$oIVGUxFIAQF/A5AzRqUHw.BNvZcuNgeBkAIbILtPVCKFiFCymZ4ra
