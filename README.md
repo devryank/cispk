@@ -28,25 +28,25 @@ the world’s most popular framework for building responsive, mobile-first sites
 [getbootstrap](http://getbootstrap.com)
 
 
-# Sistem Pendukung Keputusan Menggunakan Metode SAW
+# Sistem Pendukung Keputusan ...
 
 Sistem Pendukung Keputusan ini dapat digunakan untuk berbagai macam studi kasus sesuai kebutuhan. Contohnya seperti seleksi calon karyawan atau rekomendasi handphone untuk dibeli.
 
 Metode yang digunakan adalah SAW atau Simple Additive Weighting. Metode SAW sering juga dikenal istilah metode penjumlahan terbobot. Konsep dasarnya adalah mencari penjumlahan terbobot dari rating kinerja pada setiap alternatif pada semua atribut. Metode SAW membutuhkan proses normalisasi matriks keputusan (x) ke suatu skala yang dapat diperbandingkan dengan semua rating alternatif yang ada.
 
-# How to Install
+## How to Install
 1. `git clone https://github.com/devryank/cispk.git`
 2. Buat database di local dengan nama db_cispk atau yang lainnya.
 3. setting .env sesuai kebutuhan
-    `database.default.hostname = localhost`
-	`database.default.database = db_cispk`
-	`database.default.username = root`
-	`database.default.password =`
-	`database.default.DBDriver = MySQLi`
+ 	- database.default.hostname = localhost
+	- database.default.database = db_cispk
+	- database.default.username = root
+	- database.default.password =
+	- database.default.DBDriver = MySQLi
 4. Buka terminal,`php spark migrate`
 5. `php spark serve`
 
-# How to Use
+## How to Use
 1. Registrasi user
 2. Kasus -> Tambah Kasus
 3. Kriteria -> Tambah Kriteria
