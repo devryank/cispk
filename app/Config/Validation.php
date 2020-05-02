@@ -46,12 +46,12 @@ class Validation
 			'required' => 'wajib diisi',
 			'string' => 'hanya dapat diisi karakter',
 			'min_length' => 'minimal diisi 3 karakter',
-			'max_length' => 'minimal diisi 100 karakter',
+			'max_length' => 'maksimal diisi 100 karakter',
 		],
 		'username' => [
 			'required' => 'wajib diisi',
 			'min_length' => 'minimal diisi 3 karakter',
-			'max_length' => 'minimal diisi 100 karakter',
+			'max_length' => 'maksimal diisi 100 karakter',
 			'is_unique' => 'Username sudah digunakan pengguna lain',
 		],
 		'password' => [
@@ -73,7 +73,7 @@ class Validation
 		'username' => [
 			'required' => 'wajib diisi',
 			'min_length' => 'minimal diisi 3 karakter',
-			'max_length' => 'minimal diisi 100 karakter',
+			'max_length' => 'maksimal diisi 100 karakter',
 		],
 		'password' => [
 			'required' => 'Kolom password wajib diisi',
@@ -91,7 +91,7 @@ class Validation
 		'nama_kasus' => [
 			'required' => 'wajib diisi',
 			'min_length' => 'minimal diisi 3 karakter',
-			'max_length' => 'minimal diisi 100 karakter',
+			'max_length' => 'maksimal diisi 100 karakter',
 			'is_unique' => 'studi kasus sudah ada'
 		]
 	];
@@ -105,7 +105,7 @@ class Validation
 		'nama_kriteria' => [
 			'required' => 'wajib diisi',
 			'min_length' => 'minimal diisi 3 karakter',
-			'max_length' => 'minimal diisi 50 karakter',
+			'max_length' => 'maksimal diisi 50 karakter',
 		],
 		'tipe' => [
 			'required' => 'wajib diisi',
