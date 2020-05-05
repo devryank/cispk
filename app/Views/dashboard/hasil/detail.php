@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <?= session()->getFlashdata('message'); ?>
-                    <h3 class="title-5 m-b-35">Data User</h3>
+                    <h3 class="title-5 m-b-35">Data Hasil</h3>
                 </div>
             </div>
             <div class="row">

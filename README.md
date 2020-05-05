@@ -61,4 +61,4 @@ Metode yang digunakan adalah SAW atau Simple Additive Weighting. Metode SAW seri
 ![Image 5](https://i.imgur.com/9YPk03r.png)
 ![Image 6](https://i.imgur.com/7pI5f6I.png)
 ![Image 7](https://i.imgur.com/zjgRKzV.png)
-![Image 8](https://i.imgur.com/SiKtbpx.png)
+![Image 8](https://i.imgur.com/t7oFqzH.png)
