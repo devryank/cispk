@@ -52,3 +52,13 @@ Metode yang digunakan adalah SAW atau Simple Additive Weighting. Metode SAW seri
 3. Kriteria -> Tambah Kriteria
 4. Alternatif -> Tambah Alternatif
 5. Hasil perhitungan berada di halaman hasil
+
+## SCREENSHOT
+![Image 1](https://i.imgur.com/zdOajpe.png)
+![Image 2](https://i.imgur.com/Oxdjsbc.png)
+![Image 3](https://i.imgur.com/WqEzKbG.png)
+![Image 4](https://i.imgur.com/cm6qB9n.png)
+![Image 5](https://i.imgur.com/9YPk03r.png)
+![Image 6](https://i.imgur.com/7pI5f6I.png)
+![Image 7](https://i.imgur.com/zjgRKzV.png)
+![Image 8](https://i.imgur.com/SiKtbpx.png)
