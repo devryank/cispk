@@ -1,6 +1,9 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
+
 class Master_model extends Model
 {
     protected $tbl_kasus = 'kasus';
@@ -18,25 +21,40 @@ class Master_model extends Model
     public function get_by_id($tbl, $where, $id)
     {
         $query = $this->db->table($tbl)
-                          ->where($where, $id)
-                          ->get();
+            ->where($where, $id)
+            ->get();
+        return $query;
+    }
+
+    public function count_get_by_id($tbl, $where, $id)
+    {
+        $query = $this->db->table($tbl)
+            ->where($where, $id);
         return $query;
     }
 
     public function get_where($tbl, $where)
     {
         $query = $this->db->table($tbl)
-                          ->where($where)
-                          ->get();
+            ->where($where)
+            ->get();
+        return $query;
+    }
+
+    public function get_join($tbl, $tbl2, $join, $where, $id)
+    {
+        $query = $this->db->table($tbl)
+            ->join($tbl2, $join)
+            ->where($where, $id);
         return $query;
     }
 
     public function delete_row($tbl, $where)
     {
         $query = $this->db->table($tbl)
-                          ->where($where)
-                          ->delete();
-        return $query;  
+            ->where($where)
+            ->delete();
+        return $query;
     }
 
     public function tambah_kasus($data)
@@ -44,23 +62,23 @@ class Master_model extends Model
         $query = $this->db->table($this->tbl_kasus)->insert($data);
         return $query;
     }
-    
+
     public function edit_kasus($data, $slug)
     {
         $query = $this->db->table($this->tbl_kasus)
-                          ->where('slug', $slug)
-                          ->update($data);
+            ->where('slug', $slug)
+            ->update($data);
         return $query;
     }
 
     public function delete_kasus($slug)
     {
         $query = $this->db->table($this->tbl_kasus)
-                          ->where('slug', $slug)
-                          ->delete();
+            ->where('slug', $slug)
+            ->delete();
         return $query;
     }
-    
+
     public function tambah_kriteria($data)
     {
         $query = $this->db->table($this->tbl_kriteria)->insert($data);
@@ -70,102 +88,100 @@ class Master_model extends Model
     public function edit_kriteria($data, $id)
     {
         $query = $this->db->table($this->tbl_kriteria)
-                          ->where('id_kriteria', $id)
-                          ->update($data);
+            ->where('id_kriteria', $id)
+            ->update($data);
         return $query;
     }
 
     public function delete_kriteria($slug)
     {
         $query = $this->db->table($this->tbl_kriteria)
-                          ->where('slug', $slug)
-                          ->delete();
+            ->where('slug', $slug)
+            ->delete();
         return $query;
     }
 
     public function get_kriteria($where)
     {
         $query = $this->db->table($this->tbl_kriteria)
-                          ->where($where)
-                          ->get();
+            ->where($where)
+            ->get();
         return $query;
     }
 
     public function get_alternatif($idKasus, $slug)
     {
         $query = $this->db->table($this->tbl_alternatif)
-                          ->where('id_kasus', $idKasus)
-                          ->where('slug', $slug)
-                          ->get();
+            ->where('id_kasus', $idKasus)
+            ->where('slug', $slug)
+            ->get();
         return $query;
     }
 
     public function tambah_alternatif($data)
     {
         $query = $this->db->table($this->tbl_alternatif)
-                          ->insert($data);
+            ->insert($data);
         return $query;
     }
 
     public function edit_alternatif($data, $id)
     {
         $query = $this->db->table($this->tbl_alternatif)
-                          ->where('id_alternatif', $id)
-                          ->update($data);
+            ->where('id_alternatif', $id)
+            ->update($data);
         return $query;
     }
 
     public function delete_alternatif($slug)
     {
         $id = $this->db->table($this->tbl_alternatif)
-                       ->where('slug', $slug)
-                       ->get()->getRow()->id_alternatif;
+            ->where('slug', $slug)
+            ->get()->getRow()->id_alternatif;
         $deletePengujian = $this->db->table($this->tbl_pengujian)
-                                    ->where('id_alternatif', $id)
-                                    ->delete();
-        if($deletePengujian)
-        {
-            $query = $this->db->table($this->tbl_alternatif)
             ->where('id_alternatif', $id)
             ->delete();
+        if ($deletePengujian) {
+            $query = $this->db->table($this->tbl_alternatif)
+                ->where('id_alternatif', $id)
+                ->delete();
             return $query;
         } else {
             return FALSE;
         }
-
     }
 
     public function detail_pengujian($id)
     {
         $query = $this->db->table($this->tbl_pengujian)
-                          ->select('kriteria.nama_kriteria, kriteria.bobot, kriteria.slug, pengujian.nilai')
-                          ->join('kriteria', 'kriteria.id_kriteria=pengujian.id_kriteria')
-                          ->where('pengujian.id_alternatif', $id)
-                          ->get();
+            ->select('kriteria.nama_kriteria, kriteria.bobot, kriteria.slug, pengujian.nilai')
+            ->join('kriteria', 'kriteria.id_kriteria=pengujian.id_kriteria')
+            ->where('pengujian.id_alternatif', $id)
+            ->get();
         return $query;
     }
 
     public function tambah_pengujian($data)
     {
         $query = $this->db->table($this->tbl_pengujian)
-                          ->insert($data);
+            ->insert($data);
         return $query;
     }
 
     public function edit_pengujian($data, $id)
     {
         $query = $this->db->table($this->tbl_pengujian)
-                          ->where('id_alternatif', $id)
-                          ->update($data);
+            ->where('id_alternatif', $id)
+            ->update($data);
         return $query;
     }
 
     public function delete_pengujian($alternatif, $kriteria)
     {
         $query = $this->db->table($this->tbl_pengujian)
-                          ->where('id_alternatif', $alternatif)
-                          ->where('id_kriteria', $kriteria)
-                          ->delete();
+            ->where('id_alternatif', $alternatif)
+            ->where('id_kriteria', $kriteria)
+            ->delete();
         return $query;
     }
 
@@ -178,13 +194,13 @@ class Master_model extends Model
         // WHERE kasus.id_kasus = 5 
         // GROUP BY pengujian.id_kriteria
         $query = $this->db->table($this->tbl_kasus)
-                          ->select("kasus.nama_kasus, kriteria.nama_kriteria, kriteria.tipe, kriteria.bobot, MIN(nilai) as nilai_minimal, MAX(nilai) as nilai_maksimal")
-                          ->join('kriteria', 'kriteria.id_kasus=kasus.id_kasus')
-                          ->join('alternatif', 'alternatif.id_kasus=kasus.id_kasus')
-                          ->join('pengujian', 'pengujian.id_kriteria=kriteria.id_kriteria AND pengujian.id_alternatif=alternatif.id_alternatif')
-                          ->where('kasus.id_kasus', $id)
-                          ->orderBy('kriteria.nama_kriteria', 'ASC')
-                          ->groupBy('pengujian.id_kriteria');
+            ->select("kasus.nama_kasus, kriteria.nama_kriteria, kriteria.tipe, kriteria.bobot, MIN(nilai) as nilai_minimal, MAX(nilai) as nilai_maksimal")
+            ->join('kriteria', 'kriteria.id_kasus=kasus.id_kasus')
+            ->join('alternatif', 'alternatif.id_kasus=kasus.id_kasus')
+            ->join('pengujian', 'pengujian.id_kriteria=kriteria.id_kriteria AND pengujian.id_alternatif=alternatif.id_alternatif')
+            ->where('kasus.id_kasus', $id)
+            ->orderBy('kriteria.nama_kriteria', 'ASC')
+            ->groupBy('pengujian.id_kriteria');
         return $query->get()->getResult();
     }
 
@@ -200,28 +216,28 @@ class Master_model extends Model
         return $query->getResult();
     }
 
-    
+
     public function hitungAlternatif($id)
     {
         $query = $this->db->table($this->tbl_alternatif)
-                          ->select('COUNT(alternatif.nama_alternatif) as jumlahAlternatif')
-                          ->where('id_kasus', $id);
+            ->select('COUNT(alternatif.nama_alternatif) as jumlahAlternatif')
+            ->where('id_kasus', $id);
         return $query->get()->getResult();
     }
 
     public function hitungKriteria($id)
     {
         $query = $this->db->table($this->tbl_kriteria)
-                          ->select('COUNT(kriteria.nama_kriteria) as jumlahKriteria')
-                          ->where('id_kasus', $id);
+            ->select('COUNT(kriteria.nama_kriteria) as jumlahKriteria')
+            ->where('id_kasus', $id);
         return $query->get()->getResult();
     }
 
     public function edit_profile($username, $input)
     {
         $query = $this->db->table($this->tbl_users)
-                          ->where('username', $username)
-                          ->update($input);
+            ->where('username', $username)
+            ->update($input);
         return $query;
     }
 }

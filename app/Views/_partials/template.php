@@ -14,19 +14,19 @@
 
     <!-- Fontfaces CSS-->
     <link href="<?= base_url(); ?>/assets/css/font-face.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="<?= base_url(); ?>/assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     
-    <link href="<?= base_url(); ?>/assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="<?= base_url(); ?>/assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/wow/animate.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url(); ?>/assets/vendor_/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <!-- Vendor CSS-->
     <link href="<?= base_url(); ?>/assets/css/jquery.dataTables.min.css" rel="stylesheet">
 
@@ -219,22 +219,22 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="<?= base_url(); ?>/assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="<?= base_url(); ?>/assets/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/bootstrap-4.1/popper.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/bootstrap-4.1/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>/assets/js/jquery.dataTables.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="<?= base_url(); ?>/assets/vendor/slick/slick.min.js">
+    <script src="<?= base_url(); ?>/assets/vendor_/slick/slick.min.js">
     </script>
-    <script src="<?= base_url(); ?>/assets/vendor/wow/wow.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/animsition/animsition.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/wow/wow.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/animsition/animsition.min.js"></script>
     </script>
-    <script src="<?= base_url(); ?>/assets/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/counter-up/jquery.counterup.min.js">
+    <script src="<?= base_url(); ?>/assets/vendor_/counter-up/jquery.waypoints.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="<?= base_url(); ?>/assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="<?= base_url(); ?>/assets/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor_/chartjs/Chart.bundle.min.js"></script>
 
     <!-- Main JS-->
     <script src="<?= base_url(); ?>/assets/js/main.js"></script>

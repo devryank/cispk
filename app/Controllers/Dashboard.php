@@ -14,13 +14,15 @@ class Dashboard extends Controller
 
     public function index()
     {
+        $user_id = session()->get('id_user');
         $data = array(
             'title' => 'Dashboard',
             'segment' => $this->request->uri->getSegments(),
             'jmlUser' => $this->master->get_all_data('users')->countAllResults(),
-            'jmlKasus' => $this->master->get_all_data('kasus')->countAllResults(),
-            'jmlAlternatif' => $this->master->get_all_data('alternatif')->countAllResults(),
+            'jmlKasus' => $this->master->count_get_by_id('kasus', 'id_user', $user_id)->countAllResults(),
+            'jmlAlternatif' => $this->master->get_join('alternatif', 'kasus', 'kasus.id_kasus = alternatif.id_kasus', 'kasus.id_user', $user_id)->countAllResults(),
         );
+
         echo view('dashboard/index', $data);
     }
 
@@ -29,7 +31,7 @@ class Dashboard extends Controller
         $data = array(
             'title' => 'Kasus',
             'segment' => $this->request->uri->getSegments(),
-            'listKasus' => $this->master->get_all_data('kasus')->get()
+            'listKasus' => $this->master->get_by_id('kasus', 'id_user', session()->get('id_user'))
         );
         echo view('dashboard/kasus/view', $data);
     }
@@ -416,9 +418,9 @@ class Dashboard extends Controller
             'id_kriteria' => $this->request->getPost('id_kriteria')
         );
         $cekPengujian = $this->master->get_where('pengujian', [
-            'id_alternatif' => $getIdAlternatif->id_alternatif, 
+            'id_alternatif' => $getIdAlternatif->id_alternatif,
             'id_kriteria' => $this->request->getPost('id_kriteria')
-            ])->getRow();
+        ])->getRow();
 
         if ($validation->run($input, 'tambah_nilai') == FALSE) {
             $getIdKasus = $this->master->get_by_id('kasus', 'slug', $slug1)->getRow();
@@ -432,7 +434,7 @@ class Dashboard extends Controller
             helper('form');
             echo view('dashboard/kasus/alternatif/detail-add', $data);
         } else {
-            if($cekPengujian == FALSE){
+            if ($cekPengujian == FALSE) {
                 $query = $this->master->tambah_pengujian($input);
                 if ($query) {
                     session()->setFlashdata('message', '<p class="alert alert-success">Berhasil menambah alternatif</p>');
@@ -534,7 +536,7 @@ class Dashboard extends Controller
         $data = array(
             'title' => 'Hasil',
             'segment' => $this->request->uri->getSegments(),
-            'listHasil' => $this->master->get_all_data('kasus')->get()->getResult()
+            'listHasil' => $this->master->get_by_id('kasus', 'id_user', session()->get('id_user'))->getResult()
         );
         echo view('dashboard/hasil/view', $data);
     }
