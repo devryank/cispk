@@ -509,27 +509,27 @@ class Dashboard extends Controller
         }
     }
 
-    public function user()
-    {
-        $data = array(
-            'title' => 'User',
-            'listUser' => $this->master->get_all_data('users')->get(),
-            'segment' => $this->request->uri->getSegments(),
-        );
-        echo view('dashboard/user/view', $data);
-    }
+    // public function user()
+    // {
+    //     $data = array(
+    //         'title' => 'User',
+    //         'listUser' => $this->master->get_all_data('users')->get(),
+    //         'segment' => $this->request->uri->getSegments(),
+    //     );
+    //     echo view('dashboard/user/view', $data);
+    // }
 
-    public function delete_user($username)
-    {
-        $query = $this->master->delete_row('users', ['username' => $username]);
-        if ($query) {
-            session()->setFlashdata('message', '<p class="alert alert-success">Berhasil menghapus user</p>');
-            return $this->response->redirect(site_url('dashboard/user/'));
-        } else {
-            session()->setFlashdata('message', '<p class="alert alert-danger">Gagal menghapus user</p>');
-            return $this->response->redirect(site_url('dashboard/user/'));
-        }
-    }
+    // public function delete_user($username)
+    // {
+    //     $query = $this->master->delete_row('users', ['username' => $username]);
+    //     if ($query) {
+    //         session()->setFlashdata('message', '<p class="alert alert-success">Berhasil menghapus user</p>');
+    //         return $this->response->redirect(site_url('dashboard/user/'));
+    //     } else {
+    //         session()->setFlashdata('message', '<p class="alert alert-danger">Gagal menghapus user</p>');
+    //         return $this->response->redirect(site_url('dashboard/user/'));
+    //     }
+    // }
 
     public function hasil()
     {

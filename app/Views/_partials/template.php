@@ -21,7 +21,7 @@
     <!-- Bootstrap CSS-->
     <link href="<?= base_url(); ?>/assets/vendor_/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
-    
+
     <link href="<?= base_url(); ?>/assets/vendor_/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="<?= base_url(); ?>/assets/vendor_/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
     <link href="<?= base_url(); ?>/assets/vendor_/wow/animate.css" rel="stylesheet" media="all">
@@ -42,7 +42,7 @@
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
-                        <a href="<?= site_url('dashboard');?>">
+                        <a href="<?= site_url('dashboard'); ?>">
                             <img src="<?= base_url(); ?>/assets/images/icon/logo-white.png" alt="CoolAdmin" />
                         </a>
                     </div>
@@ -53,18 +53,10 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="bot-line"></span>Dashboard</a>
                             </li>
-                            <li class="has-sub">
-                                <a href="#">
+                            <li>
+                                <a href="<?= site_url('dashboard/kasus'); ?>">
                                     <i class="fas fa-copy"></i>
-                                    <span class="bot-line"></span>Master</a>
-                                <ul class="header3-sub-list list-unstyled">
-                                    <li>
-                                        <a href="<?= site_url('dashboard/kasus'); ?>">Kasus</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?= site_url('dashboard/user'); ?>">User</a>
-                                    </li>
-                                </ul>
+                                    <span class="bot-line"></span>Kasus</a>
                             </li>
                             <li>
                                 <a href="<?= site_url('dashboard/hasil'); ?>">
@@ -85,19 +77,19 @@
                                 <div class="account-dropdown js-dropdown">
                                     <div class="info clearfix">
                                         <div class="image">
-                                            <a href="<?= site_url('profile/index/' . session()->get('username'));?>">
+                                            <a href="<?= site_url('profile/index/' . session()->get('username')); ?>">
                                                 <img src="<?= base_url(); ?>/assets/images/icon/avatar-01.jpg" alt="John Doe" />
                                             </a>
                                         </div>
                                         <div class="content">
                                             <h5 class="name">
-                                                <a href="<?= site_url('profile/index/' . session()->get('username'));?>"><?= session()->get('full_name'); ?></a>
+                                                <a href="<?= site_url('profile/index/' . session()->get('username')); ?>"><?= session()->get('full_name'); ?></a>
                                             </h5>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
-                                            <a href="<?= site_url('profile/index/' . session()->get('username'));?>">
+                                            <a href="<?= site_url('profile/index/' . session()->get('username')); ?>">
                                                 <i class="zmdi zmdi-account"></i>Account</a>
                                         </div>
                                     </div>
@@ -116,8 +108,8 @@
 
         <!-- HEADER MOBILE-->
         <header class="header-mobile header-mobile-2 d-block d-lg-none">
-            
-        <nav class="navbar-mobile">
+
+            <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
@@ -166,29 +158,29 @@
                             <img src="<?= base_url(); ?>/assets/images/icon/avatar-01.jpg" alt="John Doe" />
                         </div>
                         <div class="content">
-                            <a class="js-acc-btn" href="<?= site_url('profile/index/' . session()->get('username'));?>"><?= session()->get('full_name'); ?></a>
+                            <a class="js-acc-btn" href="<?= site_url('profile/index/' . session()->get('username')); ?>"><?= session()->get('full_name'); ?></a>
                         </div>
                         <div class="account-dropdown js-dropdown">
                             <div class="info clearfix">
                                 <div class="image">
-                                    <a href="<?= site_url('profile/index/' . session()->get('username'));?>">
+                                    <a href="<?= site_url('profile/index/' . session()->get('username')); ?>">
                                         <img src="<?= base_url(); ?>/assets/images/icon/avatar-01.jpg" alt="John Doe" />
                                     </a>
                                 </div>
                                 <div class="content">
                                     <h5 class="name">
-                                        <a href="<?= site_url('profile/index/' . session()->get('username'));?>"><?= session()->get('full_name'); ?></a>
+                                        <a href="<?= site_url('profile/index/' . session()->get('username')); ?>"><?= session()->get('full_name'); ?></a>
                                     </h5>
                                 </div>
                             </div>
                             <div class="account-dropdown__body">
                                 <div class="account-dropdown__item">
-                                    <a href="<?= site_url('profile/index/' . session()->get('username'));?>">
+                                    <a href="<?= site_url('profile/index/' . session()->get('username')); ?>">
                                         <i class="zmdi zmdi-account"></i>Account</a>
                                 </div>
                             </div>
                             <div class="account-dropdown__footer">
-                                <a href="<?= site_url('auth/logout');?>">
+                                <a href="<?= site_url('auth/logout'); ?>">
                                     <i class="zmdi zmdi-power"></i>Logout</a>
                             </div>
                         </div>
@@ -241,7 +233,9 @@
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable({
-                "order": [[1, 'desc']]
+                "order": [
+                    [1, 'desc']
+                ]
             });
         });
     </script>
