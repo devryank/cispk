@@ -37,10 +37,10 @@
                     <img src="<?= base_url(); ?>/assets/images/icon/avatar-01.jpg" alt="John Doe" />
                 </div>
                 <div class="col-md-4">
-                    <h3 class="title-2 mb-1"><?= session()->get('full_name');?></h3>
-                    <h5 class="display-5 mb-5"><?= session()->get('username');?></h5>
-                    <a href="<?= site_url('profile/edit-profile/' . session()->get('username'));?>" class="btn btn-primary">Edit</a>
-                    <a href="<?= site_url('auth/logout');?>" class="btn btn-danger">Logout</a>
+                    <h3 class="title-2 mb-1"><?= $user->full_name; ?></h3>
+                    <h5 class="display-5 mb-5"><?= $user->username; ?></h5>
+                    <a href="<?= site_url('profile/edit-profile/' . $user->username); ?>" class="btn btn-primary">Edit</a>
+                    <a href="<?= site_url('auth/logout'); ?>" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>

@@ -1,9 +1,11 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use App\Models\Master_model;
 use CodeIgniter\Controller;
 
-class Profile extends Controller 
+class Profile extends Controller
 {
     public function __construct()
     {
@@ -14,6 +16,7 @@ class Profile extends Controller
     {
         $data = array(
             'title' => 'Profile - ' . $username,
+            'user' => $this->master->get_by_id('users', 'id_user', session()->get('id_user'))->getRow(),
             'segment' => $this->request->uri->getSegments(),
         );
         echo view('profile/view', $data);
@@ -25,7 +28,7 @@ class Profile extends Controller
         $data = array(
             'title' => 'Edit Profile - ' . $username,
             'segment' => $this->request->uri->getSegments(),
-            'user' => $this->master->get_by_id('users', 'username', $username)->getRow()
+            'user' => $this->master->get_by_id('users', 'id_user', session()->get('id_user'))->getRow()
         );
         echo view('profile/edit', $data);
     }
@@ -36,13 +39,12 @@ class Profile extends Controller
         $input = array(
             'full_name' => $this->request->getPost('full_name'),
         );
-        if($validation->run($input, 'profile') == FALSE)
-        {
+        if ($validation->run($input, 'profile') == FALSE) {
             helper('form');
             $data = array(
                 'title' => 'Edit Profile - ' . $username,
                 'segment' => $this->request->uri->getSegments(),
-                'user' => $this->master->get_by_id('users', 'username', $username)->getRow()
+                'user' => $this->master->get_by_id('users', 'id_user', session()->get('id_user'))->getRow()
             );
             echo view('profile/edit', $data);
         } else {
